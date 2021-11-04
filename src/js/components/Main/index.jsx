@@ -1,23 +1,15 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import Search from 'js/components/Search';
 import CurrentWeather from 'js/components/CurrentWeather';
 import DailyForecast from 'js/components/DailyForecast';
 import { getCurrentAndForecast } from 'js/fetches/weather';
-
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const SearchContainer = styled.div`
-  margin: 20px 0 40px;
-`
-
-const CurrentContainer = styled.div`
-  margin: 0 0 30px;
-`
+import {
+  GlobalStyle,
+  MainContainer,
+  MainContent,
+  SearchContainer,
+  CurrentContainer
+} from './index.styled';
 
 const Main = () => {
   const [weather, setWeather] = useState();
@@ -36,6 +28,8 @@ const Main = () => {
   const { daily } = weather;
   return (
     <MainContainer>
+    <GlobalStyle /> 
+      <MainContent>
       <SearchContainer>
         <Search />
       </SearchContainer>
@@ -43,6 +37,7 @@ const Main = () => {
         <CurrentWeather weather={weather} />
       </CurrentContainer>
       <DailyForecast forecast={daily} />
+      </MainContent>
     </MainContainer>
   );
 };

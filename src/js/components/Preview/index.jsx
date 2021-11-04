@@ -21,6 +21,7 @@ const PreviewCard = styled.div`
   margin: 5px 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  background-color: #fff;
 `;
 
 const Preview = ({ day }) => {

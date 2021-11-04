@@ -5,10 +5,21 @@ const StyledSpan = styled.span`
   font-weight: 500;
 `;
 
-const Temp = ({ value, high = true, ...restProps }) => {
+const Temp = ({ value, high = true, "aria-label": ariaLabel, ...restProps }) => {
   const displayed = Math.round(value);
+
+  let renderedAriaLabel;
+  if(ariaLabel) {
+    renderedAriaLabel = ariaLabel
+  } else if (high) {
+    renderedAriaLabel = 'high'
+  } else {
+    renderedAriaLabel = 'low'
+  }
+  renderedAriaLabel = `${renderedAriaLabel} ${displayed} degrees`;
+  
   return (
-    <StyledSpan {...restProps} high={high}>{displayed}&deg;</StyledSpan>
+    <StyledSpan  high={high} aria-label={renderedAriaLabel} {...restProps}>{displayed}&deg;</StyledSpan>
   )
 }
 

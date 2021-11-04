@@ -15,7 +15,7 @@ const ForecastContainer = styled.div`
  const DailyForecast = ({ forecast }) => {
   return (
     <ForecastContainer>
-      {forecast.slice(1,6).map(day => <Preview day={day} />)}
+      {forecast.slice(1,6).map(day => <Preview day={day} key={day.dt} />)}
     </ForecastContainer>
   )
 }
