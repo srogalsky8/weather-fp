@@ -1,7 +1,9 @@
 
 
 const svgs = {
+  'few clouds': 'cloudy-day-1',
   'broken clouds': 'cloudy-day-2',
+  'scattered clouds': 'cloudy-day-3',
   'overcast clouds': 'cloudy',
   'clear sky': 'day',
   'light rain': 'rainy-4',

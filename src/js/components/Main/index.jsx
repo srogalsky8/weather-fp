@@ -3,6 +3,7 @@ import Search from 'js/components/Search';
 import CurrentWeather from 'js/components/CurrentWeather';
 import DailyForecast from 'js/components/DailyForecast';
 import { getCurrentAndForecast } from 'js/fetches/weather';
+import cities from 'js/data/cities';
 import {
   GlobalStyle,
   MainContainer,
@@ -13,30 +14,35 @@ import {
 
 const Main = () => {
   const [weather, setWeather] = useState();
+  const [cityName, setCityName] = useState('San Diego');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchWeather = async () => {
-      setWeather(await getCurrentAndForecast({ lat: 55.018803, lon: 82.933952 }));
+      setLoading(true)
+      const city = cities[cityName];
+      setWeather(await getCurrentAndForecast(city));
+      setLoading(false);
     }
     fetchWeather();
-  }, []);
+  }, [cityName]);
 
-  if (!weather) {
-    return <div>Loading...</div>
-  }
-
-  const { daily } = weather;
   return (
     <MainContainer>
     <GlobalStyle /> 
       <MainContent>
-      <SearchContainer>
-        <Search />
-      </SearchContainer>
-      <CurrentContainer>
-        <CurrentWeather weather={weather} />
-      </CurrentContainer>
-      <DailyForecast forecast={daily} />
+        <SearchContainer>
+          <Search cityName={cityName} onChange={(select) => setCityName(select.value)} />
+        </SearchContainer>
+        { !loading && (
+          <>
+            <CurrentContainer>
+              <CurrentWeather weather={weather} cityName={cityName} />
+            </CurrentContainer>
+            <DailyForecast forecast={weather.daily} />
+          </>
+        )}
+        { loading && <div style={{textAlign: 'center'}}><img src="/animated/snowy-6.svg" alt="loading icon" width="200px"/></div>}
       </MainContent>
     </MainContainer>
   );

@@ -15,12 +15,12 @@ align-items: center;
 `;
 
 const MainContent = styled.div`
-max-width: 100%
-width: 772px;
+max-width: 100%;
+width: 790px;
 `;
 
 const SearchContainer = styled.div`
-margin: 20px 0 40px;
+  margin: 20px 8px 40px;
 `;
 
 const CurrentContainer = styled.div`

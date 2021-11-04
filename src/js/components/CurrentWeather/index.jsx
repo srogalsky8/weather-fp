@@ -12,7 +12,7 @@ import {
 /**
  * Panel showing current weather
  */
-const CurrentWeather = ({ weather }) => {
+const CurrentWeather = ({ weather, cityName }) => {
   const { current, daily, timezone } = weather;
   const { temp, dt } = current;
   const description = current.weather[0].description;
@@ -34,7 +34,7 @@ const CurrentWeather = ({ weather }) => {
         </IconContainer>
       </div>
       <StyledLocationAndTime>
-        San Diego, CA
+        {cityName}
         <DateDisplay ts={dt} timezone={timezone} short={false} />
       </StyledLocationAndTime>
     </CurrentCard>

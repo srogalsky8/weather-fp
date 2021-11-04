@@ -1,14 +1,17 @@
-import { React, useState } from "react";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+import cities from 'js/data/cities';
 
-const Search = () => {
-  const [place, setPlace] = useState("San Diego");
+const cityNames = Object.keys(cities);
+
+const Search = ({ cityName, onChange }) => {
   return (
-    <input
-      type="text"
-      placeholder="Enter city name..."
-      value={place}
-      onChange={(e) => setPlace(e.target.value)}
-    ></input>
+    <Dropdown
+      options={cityNames}
+      onChange={onChange}
+      value={cityName}
+      placeholder="Select a city"
+    />
   );
 };
 
