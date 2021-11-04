@@ -1,5 +1,4 @@
-
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -9,14 +8,14 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const MainContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const MainContent = styled.div`
-max-width: 100%;
-width: 790px;
+  max-width: 100%;
+  width: 790px;
 `;
 
 const SearchContainer = styled.div`
@@ -24,7 +23,7 @@ const SearchContainer = styled.div`
 `;
 
 const CurrentContainer = styled.div`
-margin: 0 0 10px;
+  margin: 0 0 10px;
 `;
 
 export {
@@ -32,5 +31,5 @@ export {
   MainContainer,
   MainContent,
   SearchContainer,
-  CurrentContainer
+  CurrentContainer,
 };

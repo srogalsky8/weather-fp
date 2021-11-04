@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import Temp from 'js/components/Temp';
-
+import styled from "styled-components";
+import Temp from "js/components/Temp";
 
 const CurrentCard = styled.div`
   display: flex;
@@ -12,10 +11,10 @@ const CurrentCard = styled.div`
   border-radius: 8px;
   background-color: #fff;
   width: auto;
-  @media(max-width: 790px) {
+  @media (max-width: 790px) {
     padding: 30px;
   }
-  @media(max-width: 507px) {
+  @media (max-width: 507px) {
     flex-direction: column-reverse;
     align-items: center;
   }
@@ -27,11 +26,11 @@ const IconContainer = styled.div`
   text-align: center;
   img {
     margin: -60px -30px;
-    @media(max-width: 507px) {
+    @media (max-width: 507px) {
       margin-top: -40px;
     }
   }
-`
+`;
 
 const LargeTemp = styled(Temp)`
   font-size: 50px;
@@ -48,11 +47,11 @@ const StyledLocationAndTime = styled.div`
   font-size: 24px;
   font-weight: 300;
   text-align: right;
-  @media(max-width: 630px) {
+  @media (max-width: 630px) {
     font-size: 18px;
     font-weight: 400;
   }
-  @media(max-width: 507px) {
+  @media (max-width: 507px) {
     text-align: center;
   }
 `;
@@ -62,5 +61,5 @@ export {
   IconContainer,
   LargeTemp,
   StyledDescription,
-  StyledLocationAndTime
-}
+  StyledLocationAndTime,
+};

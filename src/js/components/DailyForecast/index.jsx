@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Preview from 'js/components/Preview';
+import styled from "styled-components";
+import Preview from "js/components/Preview";
 
 const ForecastContainer = styled.div`
   display: flex;
@@ -12,12 +12,14 @@ const ForecastContainer = styled.div`
 /**
  * List of 5-day forecast
  */
- const DailyForecast = ({ forecast }) => {
+const DailyForecast = ({ forecast }) => {
   return (
     <ForecastContainer>
-      {forecast.slice(1,6).map(day => <Preview day={day} key={day.dt} />)}
+      {forecast.slice(1, 6).map((day) => (
+        <Preview day={day} key={day.dt} />
+      ))}
     </ForecastContainer>
-  )
-}
+  );
+};
 
 export default DailyForecast;

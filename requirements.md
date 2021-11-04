@@ -16,8 +16,8 @@ Look at accessibility
 
 Evaluation Criteria:
 
-1.       Demonstrate simple execution of a react app with logical element/component composition
+1.        Demonstrate simple execution of a react app with logical element/component composition
 
-2.       Basic unit testing
+2.        Basic unit testing
 
-3.       Responsive design
+3.        Responsive design

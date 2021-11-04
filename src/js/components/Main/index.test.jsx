@@ -1,4 +1,8 @@
-import { render, screen, waitForElementToBeRemoved } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import Main from "./index";
 
 // jest.mock('js/fetches/weather', () => ({
@@ -7,7 +11,7 @@ import Main from "./index";
 
 test("renders with San Diego and loading icon", async () => {
   render(<Main />);
-  const loadingIcon = await screen.findByAltText('loading icon');
+  const loadingIcon = await screen.findByAltText("loading icon");
   expect(loadingIcon).toBeInTheDocument();
 });
 
@@ -16,4 +20,3 @@ test("renders with San Diego and loading icon", async () => {
 //   await waitForElementToBeRemoved(() => screen.findByAltText('loading icon'))
 //   screen.debug();
 // });
-

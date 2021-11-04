@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import Search from "./index";
 
 test("Initially set to San Diego", async () => {
-  const cityName = 'San Diego';
+  const cityName = "San Diego";
   render(<Search cityName={cityName} />);
   screen.debug();
   const selectedElement = await screen.findByText(cityName);
