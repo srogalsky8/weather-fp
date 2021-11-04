@@ -21,6 +21,7 @@ const Main = () => {
     const fetchWeather = async () => {
       setLoading(true)
       const city = cities[cityName];
+      console.log('****' + await getCurrentAndForecast(city))
       setWeather(await getCurrentAndForecast(city));
       setLoading(false);
     }
