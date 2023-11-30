@@ -15,7 +15,7 @@ const WeatherIcon = ({ description, animated = false, ...restProps }) => {
   const file = svgs[description] || "day";
   return (
     <img
-      src={`/${animated ? "animated" : "static"}/${file}.svg`}
+      src={`./${animated ? "animated" : "static"}/${file}.svg`}
       alt={description}
       {...restProps}
     />

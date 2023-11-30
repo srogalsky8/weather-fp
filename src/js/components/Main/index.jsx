@@ -47,7 +47,7 @@ const Main = () => {
         )}
         {loading && (
           <div style={{ textAlign: "center" }}>
-            <img src="/animated/snowy-6.svg" alt="loading icon" width="200px" />
+            <img src="./animated/snowy-6.svg" alt="loading icon" width="200px" />
           </div>
         )}
       </MainContent>
